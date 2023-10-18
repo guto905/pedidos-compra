@@ -6,26 +6,20 @@ Requisitos
 PHP 7.x
 MySQL
 Composer
+
 Instalação
-Clone o repositório para o seu ambiente local.
-bash
-Copy code
+1. Clone o repositório para o seu ambiente local.
 git clone https://github.com/seu_usuario/seu_projeto.git
-Instale as dependências com o Composer.
-bash
-Copy code
+
+1.Instale as dependências com o Composer.
 cd seu_projeto
 composer install
-Configure as credenciais do banco de dados no arquivo app/config/database.php.
 
-Rode as migrações para criar as tabelas do banco de dados.
-
-bash
-Copy code
+1. Configure as credenciais do banco de dados no arquivo app/config/database.php.
+2.Rode as migrações para criar as tabelas do banco de dados.
 php spark migrate
-Inicie o servidor local.
-bash
-Copy code
+
+1. Inicie o servidor local.
 php spark serve
 A API estará disponível em http://localhost:8080.
 
@@ -34,38 +28,51 @@ A API possui os seguintes endpoints:
 
 Clientes
 GET /api/clientes: Lista todos os clientes.
+
 GET /api/clientes/{id}: Obtém detalhes de um cliente específico.
+
 POST /api/clientes: Cria um novo cliente.
+
 PUT /api/clientes/{id}: Atualiza um cliente existente.
+
 DELETE /api/clientes/{id}: Deleta um cliente.
+
 Produtos
 GET /api/produtos: Lista todos os produtos.
+
 GET /api/produtos/{id}: Obtém detalhes de um produto específico.
+
 POST /api/produtos: Cria um novo produto.
+
 PUT /api/produtos/{id}: Atualiza um produto existente.
+
 DELETE /api/produtos/{id}: Deleta um produto.
+
 Pedidos
 GET /api/pedidos: Lista todos os pedidos.
+
 GET /api/pedidos/{id}: Obtém detalhes de um pedido específico.
+
 POST /api/pedidos: Cria um novo pedido.
+
 PUT /api/pedidos/{id}: Atualiza um pedido existente.
+
 DELETE /api/pedidos/{id}: Deleta um pedido.
+
 Formato de Requisição
 A API aceita requisições no formato JSON. Exemplo:
 
-json
-Copy code
+
 {
     "parametros": {
         "campo1": "valor1",
         "campo2": "valor2"
     }
 }
+
 Formato de Resposta
 A resposta da API segue o padrão:
 
-json
-Copy code
 { 
   "cabecalho": { 
     "status": 200,
@@ -75,6 +82,7 @@ Copy code
     // Dados consultados e/ou cadastrados
   } 
 }
+
 Tratamento de Erros
 Códigos de status HTTP:
 
@@ -92,6 +100,7 @@ Crie uma nova branch com a sua funcionalidade: git checkout -b nova-funcionalida
 Faça commit das suas alterações: git commit -m 'Adicionando nova funcionalidade'.
 Faça push para a branch: git push origin nova-funcionalidade.
 Abra um pull request.
+
 Licença
 Este projeto está sob a licença MIT.
 
