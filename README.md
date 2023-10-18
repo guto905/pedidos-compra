@@ -11,7 +11,7 @@ Instalação
 1. Clone o repositório para o seu ambiente local.
 git clone https://github.com/seu_usuario/seu_projeto.git
 
-1.Instale as dependências com o Composer.
+1. Instale as dependências com o Composer.
 cd seu_projeto
 composer install
 
