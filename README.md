@@ -1,54 +1,98 @@
-# CodeIgniter 4 Framework
+# API de Cadastro de Pedidos de Compra
 
-## What is CodeIgniter?
+Esta é uma API RESTful desenvolvida com o framework PHP CodeIgniter e utiliza um banco de dados relacional MySQL. A API oferece funcionalidades para o cadastro de clientes, produtos e pedidos de compra.
 
-CodeIgniter is a PHP full-stack web framework that is light, fast, flexible and secure.
-More information can be found at the [official site](https://codeigniter.com).
+Requisitos
+PHP 7.x
+MySQL
+Composer
+Instalação
+Clone o repositório para o seu ambiente local.
+bash
+Copy code
+git clone https://github.com/seu_usuario/seu_projeto.git
+Instale as dependências com o Composer.
+bash
+Copy code
+cd seu_projeto
+composer install
+Configure as credenciais do banco de dados no arquivo app/config/database.php.
 
-This repository holds the distributable version of the framework.
-It has been built from the
-[development repository](https://github.com/codeigniter4/CodeIgniter4).
+Rode as migrações para criar as tabelas do banco de dados.
 
-More information about the plans for version 4 can be found in [CodeIgniter 4](https://forum.codeigniter.com/forumdisplay.php?fid=28) on the forums.
+bash
+Copy code
+php spark migrate
+Inicie o servidor local.
+bash
+Copy code
+php spark serve
+A API estará disponível em http://localhost:8080.
 
-The user guide corresponding to the latest version of the framework can be found
-[here](https://codeigniter4.github.io/userguide/).
+Endpoints
+A API possui os seguintes endpoints:
 
-## Important Change with index.php
+Clientes
+GET /api/clientes: Lista todos os clientes.
+GET /api/clientes/{id}: Obtém detalhes de um cliente específico.
+POST /api/clientes: Cria um novo cliente.
+PUT /api/clientes/{id}: Atualiza um cliente existente.
+DELETE /api/clientes/{id}: Deleta um cliente.
+Produtos
+GET /api/produtos: Lista todos os produtos.
+GET /api/produtos/{id}: Obtém detalhes de um produto específico.
+POST /api/produtos: Cria um novo produto.
+PUT /api/produtos/{id}: Atualiza um produto existente.
+DELETE /api/produtos/{id}: Deleta um produto.
+Pedidos
+GET /api/pedidos: Lista todos os pedidos.
+GET /api/pedidos/{id}: Obtém detalhes de um pedido específico.
+POST /api/pedidos: Cria um novo pedido.
+PUT /api/pedidos/{id}: Atualiza um pedido existente.
+DELETE /api/pedidos/{id}: Deleta um pedido.
+Formato de Requisição
+A API aceita requisições no formato JSON. Exemplo:
 
-`index.php` is no longer in the root of the project! It has been moved inside the *public* folder,
-for better security and separation of components.
+json
+Copy code
+{
+    "parametros": {
+        "campo1": "valor1",
+        "campo2": "valor2"
+    }
+}
+Formato de Resposta
+A resposta da API segue o padrão:
 
-This means that you should configure your web server to "point" to your project's *public* folder, and
-not to the project root. A better practice would be to configure a virtual host to point there. A poor practice would be to point your web server to the project root and expect to enter *public/...*, as the rest of your logic and the
-framework are exposed.
+json
+Copy code
+{ 
+  "cabecalho": { 
+    "status": 200,
+    "mensagem": "Mensagem de status"
+  }, 
+  "retorno": { 
+    // Dados consultados e/ou cadastrados
+  } 
+}
+Tratamento de Erros
+Códigos de status HTTP:
 
-**Please** read the user guide for a better explanation of how CI4 works!
+200: OK
+201: Criado
+400: Requisição inválida
+401: Não autorizado
+404: Não encontrado
+500: Erro interno do servidor
+Em caso de erro, a resposta conterá um campo erro com a mensagem correspondente.
 
-## Repository Management
+Contribuindo
+Faça um fork do repositório.
+Crie uma nova branch com a sua funcionalidade: git checkout -b nova-funcionalidade.
+Faça commit das suas alterações: git commit -m 'Adicionando nova funcionalidade'.
+Faça push para a branch: git push origin nova-funcionalidade.
+Abra um pull request.
+Licença
+Este projeto está sob a licença MIT.
 
-We use GitHub issues, in our main repository, to track **BUGS** and to track approved **DEVELOPMENT** work packages.
-We use our [forum](http://forum.codeigniter.com) to provide SUPPORT and to discuss
-FEATURE REQUESTS.
 
-This repository is a "distribution" one, built by our release preparation script.
-Problems with it can be raised on our forum, or as issues in the main repository.
-
-## Contributing
-
-We welcome contributions from the community.
-
-Please read the [*Contributing to CodeIgniter*](https://github.com/codeigniter4/CodeIgniter4/blob/develop/CONTRIBUTING.md) section in the development repository.
-
-## Server Requirements
-
-PHP version 7.4 or higher is required, with the following extensions installed:
-
-- [intl](http://php.net/manual/en/intl.requirements.php)
-- [mbstring](http://php.net/manual/en/mbstring.installation.php)
-
-Additionally, make sure that the following extensions are enabled in your PHP:
-
-- json (enabled by default - don't turn it off)
-- [mysqlnd](http://php.net/manual/en/mysqlnd.install.php) if you plan to use MySQL
-- [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the HTTP\CURLRequest library
