@@ -4,6 +4,7 @@ Esta é uma API RESTful desenvolvida com o framework PHP CodeIgniter e utiliza u
 
 
 Requisitos
+
 •	PHP 7.x
 
 •	MySQL
@@ -12,6 +13,7 @@ Requisitos
 
 
 Instalação
+
 1.	Clone o repositório para o seu ambiente local.
 
 git clone https://github.com/seu_usuario/seu_projeto.git 
