@@ -87,18 +87,28 @@ Tratamento de Erros
 Códigos de status HTTP:
 
 200: OK
+
 201: Criado
+
 400: Requisição inválida
+
 401: Não autorizado
+
 404: Não encontrado
+
 500: Erro interno do servidor
+
 Em caso de erro, a resposta conterá um campo erro com a mensagem correspondente.
 
 Contribuindo
 Faça um fork do repositório.
+
 Crie uma nova branch com a sua funcionalidade: git checkout -b nova-funcionalidade.
+
 Faça commit das suas alterações: git commit -m 'Adicionando nova funcionalidade'.
+
 Faça push para a branch: git push origin nova-funcionalidade.
+
 Abra um pull request.
 
 Licença
